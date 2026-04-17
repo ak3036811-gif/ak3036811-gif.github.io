@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush Kumar — AI Research & Writing</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--surface:#111;--lime:#c8f135;--cyan:#00e5ff;--white:#f0ede6;--muted:#666;--border:#1e1e1e}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px}
+.nav-logo span{color:var(--lime)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:13px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--lime);color:#0a0a0a;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1.25rem;border-radius:2px;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+/* HERO */
+.hero{padding:6rem 3rem 4rem;position:relative;overflow:hidden}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--cyan)}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:0.95;letter-spacing:-2px;margin-bottom:2rem}
+.hero h1 .outline{-webkit-text-stroke:1px var(--white);color:transparent}
+.hero h1 .accent{color:var(--lime)}
+.hero-sub{max-width:520px;font-size:17px;color:#aaa;line-height:1.7;margin-bottom:3rem;font-weight:300}
+.hero-sub strong{color:var(--white);font-weight:500}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--lime);color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:opacity 0.2s;cursor:pointer;display:inline-block}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{border:1px solid #333;color:var(--white);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:border-color 0.2s;cursor:pointer;display:inline-block}
+.btn-ghost:hover{border-color:#666}
+.hero-bg-text{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(8rem,18vw,18rem);font-weight:800;color:rgba(255,255,255,0.02);pointer-events:none;letter-spacing:-8px;white-space:nowrap;user-select:none}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--lime)}
+.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+
+/* ABOUT STRIP */
+.about-strip{padding:5rem 3rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:768px){.about-strip{grid-template-columns:1fr}}
+.about-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
+.about-text{font-size:17px;line-height:1.8;color:#aaa;font-weight:300}
+.about-text strong{color:var(--white);font-weight:500}
+.about-highlights{display:flex;flex-direction:column;gap:1rem}
+.highlight{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;border:1px solid var(--border);border-radius:4px;transition:border-color 0.2s}
+.highlight:hover{border-color:#333}
+.highlight-icon{width:36px;height:36px;background:rgba(200,241,53,0.08);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.highlight-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px}
+.highlight-text{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* SKILLS */
+.skills{padding:5rem 3rem;border-top:1px solid var(--border)}
+.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:'Syne',sans-serif;font-size:11px;color:var(--muted);letter-spacing:0.1em}
+.section-title{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-0.5px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border)}
+.skill-item{background:var(--bg);padding:1.5rem;transition:background 0.2s}
+.skill-item:hover{background:#111}
+.skill-icon{font-size:22px;margin-bottom:0.75rem}
+.skill-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:0.25rem}
+.skill-level{font-size:11px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+.skill-bar{width:100%;height:2px;background:#1e1e1e;margin-top:0.75rem;border-radius:1px}
+.skill-fill{height:100%;background:var(--lime);border-radius:1px}
+
+/* PROJECTS */
+.projects{padding:5rem 3rem;border-top:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border)}
+.project-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background 0.2s}
+.project-card:hover{background:#0f0f0f}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.project-card:hover::before{transform:scaleX(1)}
+.project-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);background:rgba(0,229,255,0.08);padding:3px 8px;border-radius:2px;margin-bottom:1rem}
+.project-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;line-height:1.3}
+.project-desc{font-size:14px;color:#888;line-height:1.65;margin-bottom:1.5rem}
+.project-footer{display:flex;justify-content:space-between;align-items:center}
+.project-lang{font-size:12px;color:var(--muted)}
+.project-link{font-size:12px;color:var(--lime);letter-spacing:0.05em;text-transform:uppercase}
+
+/* BLOG */
+.blog{padding:5rem 3rem;border-top:1px solid var(--border)}
+.blog-list{display:flex;flex-direction:column}
+.blog-item{display:grid;grid-template-columns:80px 1fr auto;gap:2rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);cursor:pointer}
+@media(max-width:600px){.blog-item{grid-template-columns:1fr}}
+.blog-item:hover .blog-title{color:var(--lime)}
+.blog-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;padding-top:3px}
+.blog-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:0.4rem;transition:color 0.2s}
+.blog-excerpt{font-size:13px;color:#666;line-height:1.55}
+.blog-arrow{color:var(--muted);font-size:18px;padding-top:2px;transition:color 0.2s}
+.blog-item:hover .blog-arrow{color:var(--lime)}
+
+/* FOOTER */
+footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-name{font-family:'Syne',sans-serif;font-weight:800;font-size:14px}
+.footer-name span{color:var(--lime)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:12px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
+.footer-links a:hover{color:var(--white)}
+.footer-copy{font-size:11px;color:#333}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Ayush<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#blog">Writing</a>
+    <a href="#skills">Skills</a>
+  </div>
+  <a class="nav-cta" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="about">
+  <div class="hero-bg-text">AI</div>
+  <div class="hero-eyebrow">Open to research collaborations</div>
+  <h1>
+    I build<br>
+    <span class="outline">AI systems</span><br>
+    that <span class="accent">actually</span> work.
+  </h1>
+  <p class="hero-sub">
+    I'm <strong>Ayush Kumar</strong>, a high school student who designs adaptive AI systems, runs real experiments, and writes about what I find — not just what papers say.
+  </p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#projects">View My Work</a>
+    <a class="btn-ghost" href="#blog">Read My Writing</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-val">8+</div>
+      <div class="stat-label">Blog posts published</div>
+    </div>
+    <div>
+      <div class="stat-val">4+</div>
+      <div class="stat-label">GitHub projects</div>
+    </div>
+    <div>
+      <div class="stat-val">2+</div>
+      <div class="stat-label">Years researching AI</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-strip">
+  <div>
+    <div class="about-label">Who I am</div>
+    <p class="about-text">
+      I don't just read about AI — I <strong>build prototypes, run experiments, and teach what I learn</strong> to students from under-resourced communities. My work sits at the intersection of intelligence, interaction, and education.
+    </p>
+  </div>
+  <div class="about-highlights">
+    <div class="highlight">
+      <div class="highlight-icon">🧠</div>
+      <div>
+        <div class="highlight-title">AI Research</div>
+        <div class="highlight-text">Adaptive systems, human-AI interaction, learning models</div>
+      </div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">🎮</div>
+      <div>
+        <div class="highlight-title">Game System Design</div>
+        <div class="highlight-text">Building intelligent, adaptive game mechanics from scratch</div>
+      </div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">📢</div>
+      <div>
+        <div class="highlight-title">Community Teaching</div>
+        <div class="highlight-text">Workshops helping students responsibly use AI tools</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-header">
+    <span class="section-num">02 —</span>
+    <h2 class="section-title">Skills & Stack</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-item">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-name">Python</div>
+      <div class="skill-level">Advanced</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">🤖</div>
+      <div class="skill-name">Machine Learning</div>
+      <div class="skill-level">Intermediate</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">🔗</div>
+      <div class="skill-name">LLM APIs</div>
+      <div class="skill-level">Advanced</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Data Analysis</div>
+      <div class="skill-level">Intermediate</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Web Dev</div>
+      <div class="skill-level">Intermediate</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="skill-icon">✍️</div>
+      <div class="skill-name">Research Writing</div>
+      <div class="skill-level">Advanced</div>
+      <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-header">
+    <span class="section-num">03 —</span>
+    <h2 class="section-title">GitHub Projects</h2>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-tag">Adaptive AI</div>
+      <div class="project-title">Adaptive Learning Game Engine</div>
+      <div class="project-desc">A game system that tracks player behavior and adjusts difficulty in real-time using a lightweight reinforcement model — built from scratch.</div>
+      <div class="project-footer">
+        <span class="project-lang">Python · TensorFlow</span>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">NLP Research</div>
+      <div class="project-title">Student-AI Interaction Study</div>
+      <div class="project-desc">A 2-week self-experiment measuring comprehension with and without AI assistance. Documented with full methodology and results.</div>
+      <div class="project-footer">
+        <span class="project-lang">Python · Jupyter</span>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">Education Tech</div>
+      <div class="project-title">AI Literacy Workshop Kit</div>
+      <div class="project-desc">Open-source teaching materials and exercises for introducing AI concepts to students with no technical background.</div>
+      <div class="project-footer">
+        <span class="project-lang">Markdown · Slides</span>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-tag">LLM Experiments</div>
+      <div class="project-title">Prompt Behavior Tracker</div>
+      <div class="project-desc">A tool to systematically test how small changes in prompts affect LLM outputs — built to support consistent AI research methodology.</div>
+      <div class="project-footer">
+        <span class="project-lang">Python · OpenAI API</span>
+        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="section-header">
+    <span class="section-num">04 —</span>
+    <h2 class="section-title">Writing & Research</h2>
+  </div>
+  <div class="blog-list">
+    <div class="blog-item">
+      <div class="blog-date">Apr 2026</div>
+      <div>
+        <div class="blog-title">You had a 1 in 10²·⁶⁸⁵·⁰⁰⁰ chance of being born. And you made it.</div>
+        <div class="blog-excerpt">A meditation on existence, probability, and why being alive is the most unlikely miracle in the universe.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </div>
+    <div class="blog-item">
+      <div class="blog-date">Apr 2026</div>
+      <div>
+        <div class="blog-title">I Studied With and Without AI for 2 Weeks. Here's What Happened.</div>
+        <div class="blog-excerpt">A personal experiment testing whether AI assistance improves or replaces actual understanding.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </div>
+    <div class="blog-item">
+      <div class="blog-date">Mar 2026</div>
+      <div>
+        <div class="blog-title">Is AI Making Students Smarter or Just Faster?</div>
+        <div class="blog-excerpt">Artificial intelligence has changed how students learn almost overnight. But speed isn't the same as depth.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </div>
+    <div class="blog-item">
+      <div class="blog-date">Feb 2026</div>
+      <div>
+        <div class="blog-title">Can AI Replace Teachers? What Research Actually Says</div>
+        <div class="blog-excerpt">Every few months someone makes this claim. Here's what the data, and my own experience, actually shows.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </div>
+    <div class="blog-item">
+      <div class="blog-date">Jan 2026</div>
+      <div>
+        <div class="blog-title">How I Use AI as a Tutor Without Letting It Think for Me</div>
+        <div class="blog-excerpt">The difference between using AI as a crutch versus using it as a sparring partner for your own thinking.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Ayush<span>.</span></div>
+  <div class="footer-links">
+    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+    <a href="#blog">Blog</a>
+    <a href="mailto:YOUR_EMAIL">Email</a>
+  </div>
+  <div class="footer-copy">© 2026 Ayush Kumar</div>
+</footer>
+
+</body>
+</html>
