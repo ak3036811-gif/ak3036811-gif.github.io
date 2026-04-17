@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayush Kumar — AI Research & Writing</title>
+<title>Aditya Kumar — AI Research & Writing</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -67,11 +67,35 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem
 .skill-bar{width:100%;height:2px;background:#1e1e1e;margin-top:0.75rem;border-radius:1px}
 .skill-fill{height:100%;background:var(--lime);border-radius:1px}
 
-/* PROJECTS */
-.projects{padding:5rem 3rem;border-top:1px solid var(--border)}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border)}
-.project-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background 0.2s}
-.project-card:hover{background:#0f0f0f}
+/* PROJECTS - SLIDER STYLE */
+.projects{padding:5rem 3rem;border-top:1px solid var(--border); overflow:hidden;}
+.projects-grid{
+  display:flex;
+  gap:1.5rem;
+  overflow-x:auto;
+  padding-bottom:1.5rem; /* Space for scrollbar */
+  scroll-snap-type:x mandatory;
+  scrollbar-width:thin; /* Firefox */
+  scrollbar-color:var(--lime) var(--border);
+}
+/* Chrome/Safari Scrollbar Styling */
+.projects-grid::-webkit-scrollbar{height:6px}
+.projects-grid::-webkit-scrollbar-track{background:var(--border);border-radius:3px}
+.projects-grid::-webkit-scrollbar-thumb{background:var(--lime);border-radius:3px}
+
+.project-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:4px;
+  padding:2rem;
+  position:relative;
+  overflow:hidden;
+  transition:background 0.2s, border-color 0.2s;
+  flex:0 0 calc(33.333% - 1rem); /* Shows exactly 3 on desktop */
+  min-width:320px; /* Prevents them from getting too small on mobile */
+  scroll-snap-align:start; /* Snaps beautifully when scrolling */
+}
+.project-card:hover{background:#0f0f0f; border-color:#333;}
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
 .project-card:hover::before{transform:scaleX(1)}
 .project-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);background:rgba(0,229,255,0.08);padding:3px 8px;border-radius:2px;margin-bottom:1rem}
@@ -106,17 +130,16 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
 <body>
 
 <nav>
-  <div class="nav-logo">Ayush<span>.</span></div>
+  <div class="nav-logo">Aditya<span>.</span></div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#blog">Writing</a>
     <a href="#skills">Skills</a>
   </div>
-  <a class="nav-cta" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
+  <a class="nav-cta" href="https://github.com/ak3036811-gif" target="_blank">GitHub ↗</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="about">
   <div class="hero-bg-text">AI</div>
   <div class="hero-eyebrow">Open to research collaborations</div>
@@ -126,7 +149,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
     that <span class="accent">actually</span> work.
   </h1>
   <p class="hero-sub">
-    I'm <strong>Ayush Kumar</strong>, a high school student who designs adaptive AI systems, runs real experiments, and writes about what I find — not just what papers say.
+    I'm <strong>Aditya Kumar</strong>, a BBA student who designs adaptive AI systems, runs real experiments, and writes about what I find — not just what papers say.
   </p>
   <div class="hero-actions">
     <a class="btn-primary" href="#projects">View My Work</a>
@@ -148,7 +171,6 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about-strip">
   <div>
     <div class="about-label">Who I am</div>
@@ -181,7 +203,6 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="skills" id="skills">
   <div class="section-header">
     <span class="section-num">02 —</span>
@@ -227,53 +248,57 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="projects" id="projects">
   <div class="section-header">
     <span class="section-num">03 —</span>
     <h2 class="section-title">GitHub Projects</h2>
   </div>
+  
   <div class="projects-grid">
+    
     <div class="project-card">
-      <div class="project-tag">Adaptive AI</div>
-      <div class="project-title">Adaptive Learning Game Engine</div>
-      <div class="project-desc">A game system that tracks player behavior and adjusts difficulty in real-time using a lightweight reinforcement model — built from scratch.</div>
+      <div class="project-tag">Dashboard</div>
+      <div class="project-title">nebula-dash</div>
+      <div class="project-desc">A data visualization and management dashboard interface.</div>
       <div class="project-footer">
-        <span class="project-lang">Python · TensorFlow</span>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+        <span class="project-lang">HTML · CSS · JS</span>
+        <a class="project-link" href="https://github.com/ak3036811-gif/nebula-dash" target="_blank">GitHub →</a>
       </div>
     </div>
+
     <div class="project-card">
-      <div class="project-tag">NLP Research</div>
-      <div class="project-title">Student-AI Interaction Study</div>
-      <div class="project-desc">A 2-week self-experiment measuring comprehension with and without AI assistance. Documented with full methodology and results.</div>
+      <div class="project-tag">Game Design</div>
+      <div class="project-title">Get-the-box</div>
+      <div class="project-desc">An interactive game focusing on precision and timing mechanics.</div>
       <div class="project-footer">
-        <span class="project-lang">Python · Jupyter</span>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+        <span class="project-lang">Python</span>
+        <a class="project-link" href="https://github.com/ak3036811-gif/Get-the-box" target="_blank">GitHub →</a>
       </div>
     </div>
+
     <div class="project-card">
-      <div class="project-tag">Education Tech</div>
-      <div class="project-title">AI Literacy Workshop Kit</div>
-      <div class="project-desc">Open-source teaching materials and exercises for introducing AI concepts to students with no technical background.</div>
+      <div class="project-tag">Logic / Puzzle</div>
+      <div class="project-title">Word-game</div>
+      <div class="project-desc">A text-based puzzle game testing vocabulary and algorithmic logic.</div>
       <div class="project-footer">
-        <span class="project-lang">Markdown · Slides</span>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+        <span class="project-lang">Python</span>
+        <a class="project-link" href="https://github.com/ak3036811-gif/Word-game" target="_blank">GitHub →</a>
       </div>
     </div>
+
     <div class="project-card">
-      <div class="project-tag">LLM Experiments</div>
-      <div class="project-title">Prompt Behavior Tracker</div>
-      <div class="project-desc">A tool to systematically test how small changes in prompts affect LLM outputs — built to support consistent AI research methodology.</div>
+      <div class="project-tag">Web Dev</div>
+      <div class="project-title">Personal Portfolio</div>
+      <div class="project-desc">A custom-built, responsive portfolio website featuring a horizontal project slider and modern CSS architecture.</div>
       <div class="project-footer">
-        <span class="project-lang">Python · OpenAI API</span>
-        <a class="project-link" href="https://github.com/YOUR_USERNAME" target="_blank">GitHub →</a>
+        <span class="project-lang">HTML · CSS</span>
+        <a class="project-link" href="https://github.com/ak3036811-gif/ak3036811-gif.github.io" target="_blank">GitHub →</a>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- BLOG -->
 <section class="blog" id="blog">
   <div class="section-header">
     <span class="section-num">04 —</span>
@@ -324,13 +349,13 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
 </section>
 
 <footer>
-  <div class="footer-name">Ayush<span>.</span></div>
+  <div class="footer-name">Aditya<span>.</span></div>
   <div class="footer-links">
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub</a>
+    <a href="https://github.com/ak3036811-gif" target="_blank">GitHub</a>
     <a href="#blog">Blog</a>
-    <a href="mailto:YOUR_EMAIL">Email</a>
+    <a href="mailto:your.email@gmail.com">Email</a>
   </div>
-  <div class="footer-copy">© 2026 Ayush Kumar</div>
+  <div class="footer-copy">© 2026 Aditya Kumar</div>
 </footer>
 
 </body>
