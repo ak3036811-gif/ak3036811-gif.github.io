@@ -3,134 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aditya Kumar — AI Research & Writing</title>
+<title>Ayush Kumar — AI Research & Writing</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0a0a;--surface:#111;--lime:#c8f135;--cyan:#00e5ff;--white:#f0ede6;--muted:#666;--border:#1e1e1e}
+:root{
+  --bg:#08070f;
+  --surface:#0f0d1a;
+  --purple:#9b6dff;
+  --purple-light:#c4a8ff;
+  --purple-dim:rgba(155,109,255,0.12);
+  --pink:#ff6ef7;
+  --white:#f0eeff;
+  --muted:#6b6480;
+  --border:#1e1a2e;
+}
 body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
+/* NOISE OVERLAY */
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");opacity:0.4;pointer-events:none;z-index:0}
+
 /* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,10,10,0.92);backdrop-filter:blur(12px);z-index:100}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(8,7,15,0.9);backdrop-filter:blur(16px);z-index:100}
 .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px}
-.nav-logo span{color:var(--lime)}
+.nav-logo span{color:var(--purple)}
 .nav-links{display:flex;gap:2rem}
 .nav-links a{font-size:13px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--lime);color:#0a0a0a;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1.25rem;border-radius:2px;transition:opacity 0.2s}
+.nav-cta{background:var(--purple);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1.25rem;border-radius:2px;transition:opacity 0.2s}
 .nav-cta:hover{opacity:0.85}
 
 /* HERO */
-.hero{padding:6rem 3rem 4rem;position:relative;overflow:hidden}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:2rem}
-.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--cyan)}
+.hero{padding:7rem 3rem 5rem;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-10rem;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(155,109,255,0.15) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:2rem}
+.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--purple)}
 .hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:0.95;letter-spacing:-2px;margin-bottom:2rem}
-.hero h1 .outline{-webkit-text-stroke:1px var(--white);color:transparent}
-.hero h1 .accent{color:var(--lime)}
-.hero-sub{max-width:520px;font-size:17px;color:#aaa;line-height:1.7;margin-bottom:3rem;font-weight:300}
+.hero h1 .outline{-webkit-text-stroke:1px rgba(155,109,255,0.6);color:transparent}
+.hero h1 .accent{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{max-width:520px;font-size:17px;color:#9990b5;line-height:1.7;margin-bottom:3rem;font-weight:300}
 .hero-sub strong{color:var(--white);font-weight:500}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--lime);color:#0a0a0a;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:opacity 0.2s;cursor:pointer;display:inline-block}
+.btn-primary{background:var(--purple);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:opacity 0.2s;display:inline-block}
 .btn-primary:hover{opacity:0.85}
-.btn-ghost{border:1px solid #333;color:var(--white);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:border-color 0.2s;cursor:pointer;display:inline-block}
-.btn-ghost:hover{border-color:#666}
-.hero-bg-text{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:'Syne',sans-serif;font-size:clamp(8rem,18vw,18rem);font-weight:800;color:rgba(255,255,255,0.02);pointer-events:none;letter-spacing:-8px;white-space:nowrap;user-select:none}
+.btn-ghost{border:1px solid var(--border);color:var(--white);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:border-color 0.2s;display:inline-block}
+.btn-ghost:hover{border-color:var(--purple)}
 .hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap}
-.stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--lime)}
+.stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;background:linear-gradient(90deg,var(--purple),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
 
-/* ABOUT STRIP */
+/* ABOUT */
 .about-strip{padding:5rem 3rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 @media(max-width:768px){.about-strip{grid-template-columns:1fr}}
-.about-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem}
-.about-text{font-size:17px;line-height:1.8;color:#aaa;font-weight:300}
+.about-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem}
+.about-text{font-size:17px;line-height:1.8;color:#9990b5;font-weight:300}
 .about-text strong{color:var(--white);font-weight:500}
 .about-highlights{display:flex;flex-direction:column;gap:1rem}
-.highlight{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;border:1px solid var(--border);border-radius:4px;transition:border-color 0.2s}
-.highlight:hover{border-color:#333}
-.highlight-icon{width:36px;height:36px;background:rgba(200,241,53,0.08);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.highlight-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px}
+.highlight{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;border:1px solid var(--border);border-radius:6px;transition:border-color 0.2s;background:var(--surface)}
+.highlight:hover{border-color:var(--purple)}
+.highlight-icon{width:36px;height:36px;background:var(--purple-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.highlight-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px;color:var(--white)}
 .highlight-text{font-size:12px;color:var(--muted);line-height:1.5}
+
+/* SECTION */
+.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
+.section-num{font-family:'Syne',sans-serif;font-size:11px;color:var(--purple);letter-spacing:0.1em}
+.section-title{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-0.5px}
 
 /* SKILLS */
 .skills{padding:5rem 3rem;border-top:1px solid var(--border)}
-.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
-.section-num{font-family:'Syne',sans-serif;font-size:11px;color:var(--muted);letter-spacing:0.1em}
-.section-title{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-0.5px}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border)}
 .skill-item{background:var(--bg);padding:1.5rem;transition:background 0.2s}
-.skill-item:hover{background:#111}
+.skill-item:hover{background:var(--surface)}
 .skill-icon{font-size:22px;margin-bottom:0.75rem}
 .skill-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:0.25rem}
 .skill-level{font-size:11px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
-.skill-bar{width:100%;height:2px;background:#1e1e1e;margin-top:0.75rem;border-radius:1px}
-.skill-fill{height:100%;background:var(--lime);border-radius:1px}
+.skill-bar{width:100%;height:2px;background:#1e1a2e;margin-top:0.75rem;border-radius:1px}
+.skill-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:1px}
 
-/* PROJECTS - SLIDER STYLE */
-.projects{padding:5rem 3rem;border-top:1px solid var(--border); overflow:hidden;}
-.projects-grid{
-  display:flex;
-  gap:1.5rem;
-  overflow-x:auto;
-  padding-bottom:1.5rem; /* Space for scrollbar */
-  scroll-snap-type:x mandatory;
-  scrollbar-width:thin; /* Firefox */
-  scrollbar-color:var(--lime) var(--border);
-}
-/* Chrome/Safari Scrollbar Styling */
-.projects-grid::-webkit-scrollbar{height:6px}
-.projects-grid::-webkit-scrollbar-track{background:var(--border);border-radius:3px}
-.projects-grid::-webkit-scrollbar-thumb{background:var(--lime);border-radius:3px}
-
-.project-card{
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:4px;
-  padding:2rem;
-  position:relative;
-  overflow:hidden;
-  transition:background 0.2s, border-color 0.2s;
-  flex:0 0 calc(33.333% - 1rem); /* Shows exactly 3 on desktop */
-  min-width:320px; /* Prevents them from getting too small on mobile */
-  scroll-snap-align:start; /* Snaps beautifully when scrolling */
-}
-.project-card:hover{background:#0f0f0f; border-color:#333;}
-.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+/* PROJECTS */
+.projects{padding:5rem 3rem;border-top:1px solid var(--border)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border)}
+.project-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background 0.2s}
+.project-card:hover{background:var(--surface)}
+.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
 .project-card:hover::before{transform:scaleX(1)}
-.project-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);background:rgba(0,229,255,0.08);padding:3px 8px;border-radius:2px;margin-bottom:1rem}
+.project-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);background:var(--purple-dim);padding:3px 8px;border-radius:2px;margin-bottom:1rem}
 .project-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;line-height:1.3}
-.project-desc{font-size:14px;color:#888;line-height:1.65;margin-bottom:1.5rem}
+.project-desc{font-size:14px;color:#6b6480;line-height:1.65;margin-bottom:1.5rem}
 .project-footer{display:flex;justify-content:space-between;align-items:center}
 .project-lang{font-size:12px;color:var(--muted)}
-.project-link{font-size:12px;color:var(--lime);letter-spacing:0.05em;text-transform:uppercase}
+.project-link{font-size:12px;color:var(--purple);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
+.project-link:hover{color:var(--purple-light)}
 
 /* BLOG */
 .blog{padding:5rem 3rem;border-top:1px solid var(--border)}
 .blog-list{display:flex;flex-direction:column}
-.blog-item{display:grid;grid-template-columns:80px 1fr auto;gap:2rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);cursor:pointer}
-@media(max-width:600px){.blog-item{grid-template-columns:1fr}}
-.blog-item:hover .blog-title{color:var(--lime)}
+.blog-item{display:grid;grid-template-columns:80px 1fr auto;gap:2rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.15s}
+@media(max-width:600px){.blog-item{grid-template-columns:1fr;gap:0.5rem}}
+.blog-item:hover .blog-title{color:var(--purple-light)}
+.blog-item:hover .blog-arrow{color:var(--purple)}
 .blog-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;padding-top:3px}
 .blog-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:0.4rem;transition:color 0.2s}
-.blog-excerpt{font-size:13px;color:#666;line-height:1.55}
+.blog-excerpt{font-size:13px;color:#6b6480;line-height:1.55}
 .blog-arrow{color:var(--muted);font-size:18px;padding-top:2px;transition:color 0.2s}
-.blog-item:hover .blog-arrow{color:var(--lime)}
+.view-all{display:inline-flex;align-items:center;gap:8px;margin-top:2rem;font-size:13px;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;transition:gap 0.2s}
+.view-all:hover{gap:12px}
 
 /* FOOTER */
 footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-name{font-family:'Syne',sans-serif;font-weight:800;font-size:14px}
-.footer-name span{color:var(--lime)}
+.footer-name span{color:var(--purple)}
 .footer-links{display:flex;gap:1.5rem}
 .footer-links a{font-size:12px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
 .footer-links a:hover{color:var(--white)}
-.footer-copy{font-size:11px;color:#333}
+.footer-copy{font-size:11px;color:#2e2a45}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">Aditya<span>.</span></div>
+  <div class="nav-logo">Ayush<span>.</span></div>
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
@@ -141,7 +135,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
 </nav>
 
 <section class="hero" id="about">
-  <div class="hero-bg-text">AI</div>
+  <div class="hero-glow"></div>
   <div class="hero-eyebrow">Open to research collaborations</div>
   <h1>
     I build<br>
@@ -149,7 +143,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
     that <span class="accent">actually</span> work.
   </h1>
   <p class="hero-sub">
-    I'm <strong>Aditya Kumar</strong>, a BBA student who designs adaptive AI systems, runs real experiments, and writes about what I find — not just what papers say.
+    I'm <strong>Ayush Kumar</strong>, a high school student who designs adaptive AI systems, runs real experiments, and writes about what I find — not just what papers say.
   </p>
   <div class="hero-actions">
     <a class="btn-primary" href="#projects">View My Work</a>
@@ -157,7 +151,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
   </div>
   <div class="hero-stats">
     <div>
-      <div class="stat-val">8+</div>
+      <div class="stat-val">7+</div>
       <div class="stat-label">Blog posts published</div>
     </div>
     <div>
@@ -253,49 +247,43 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
     <span class="section-num">03 —</span>
     <h2 class="section-title">GitHub Projects</h2>
   </div>
-  
   <div class="projects-grid">
-    
     <div class="project-card">
-      <div class="project-tag">Dashboard</div>
-      <div class="project-title">nebula-dash</div>
-      <div class="project-desc">A data visualization and management dashboard interface.</div>
+      <div class="project-tag">Game Dev</div>
+      <div class="project-title">Nebula Dash</div>
+      <div class="project-desc">A fast-paced space game built from scratch — combining game mechanics design with intelligent level progression systems.</div>
       <div class="project-footer">
-        <span class="project-lang">HTML · CSS · JS</span>
+        <span class="project-lang">Game Development</span>
         <a class="project-link" href="https://github.com/ak3036811-gif/nebula-dash" target="_blank">GitHub →</a>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-tag">Game Design</div>
-      <div class="project-title">Get-the-box</div>
-      <div class="project-desc">An interactive game focusing on precision and timing mechanics.</div>
+      <div class="project-tag">Game Dev</div>
+      <div class="project-title">Get the Box</div>
+      <div class="project-desc">A puzzle game exploring spatial reasoning and adaptive difficulty — designed to challenge players progressively.</div>
       <div class="project-footer">
-        <span class="project-lang">Python</span>
+        <span class="project-lang">Game Development</span>
         <a class="project-link" href="https://github.com/ak3036811-gif/Get-the-box" target="_blank">GitHub →</a>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-tag">Logic / Puzzle</div>
-      <div class="project-title">Word-game</div>
-      <div class="project-desc">A text-based puzzle game testing vocabulary and algorithmic logic.</div>
+      <div class="project-tag">NLP / Game</div>
+      <div class="project-title">Word Game</div>
+      <div class="project-desc">A language-based game that tests vocabulary and pattern recognition — built to make learning through play actually fun.</div>
       <div class="project-footer">
-        <span class="project-lang">Python</span>
+        <span class="project-lang">Python / JS</span>
         <a class="project-link" href="https://github.com/ak3036811-gif/Word-game" target="_blank">GitHub →</a>
       </div>
     </div>
-
     <div class="project-card">
-      <div class="project-tag">Education</div>
+      <div class="project-tag">CS Education</div>
       <div class="project-title">CS50.dev</div>
-      <div class="project-desc">Development environment and project workspace built for the CS50 course.</div>
+      <div class="project-desc">My CS50 coursework and experiments — documenting the learning journey through Harvard's foundational computer science course.</div>
       <div class="project-footer">
-        <span class="project-lang">C · Python</span>
+        <span class="project-lang">C · Python · SQL</span>
         <a class="project-link" href="https://github.com/ak3036811-gif/CS50.dev" target="_blank">GitHub →</a>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -305,57 +293,74 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
     <h2 class="section-title">Writing & Research</h2>
   </div>
   <div class="blog-list">
-    <div class="blog-item">
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/04/you-had-one-in-ten-to-power-of-twenty.html" target="_blank">
       <div class="blog-date">Apr 2026</div>
       <div>
         <div class="blog-title">You had a 1 in 10²·⁶⁸⁵·⁰⁰⁰ chance of being born. And you made it.</div>
         <div class="blog-excerpt">A meditation on existence, probability, and why being alive is the most unlikely miracle in the universe.</div>
       </div>
       <div class="blog-arrow">→</div>
-    </div>
-    <div class="blog-item">
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/04/i-studied-with-and-without-ai-for-2.html" target="_blank">
       <div class="blog-date">Apr 2026</div>
       <div>
         <div class="blog-title">I Studied With and Without AI for 2 Weeks. Here's What Happened.</div>
         <div class="blog-excerpt">A personal experiment testing whether AI assistance improves or replaces actual understanding.</div>
       </div>
       <div class="blog-arrow">→</div>
-    </div>
-    <div class="blog-item">
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/03/is-ai-making-students-smarter-or-just.html" target="_blank">
       <div class="blog-date">Mar 2026</div>
       <div>
         <div class="blog-title">Is AI Making Students Smarter or Just Faster?</div>
-        <div class="blog-excerpt">Artificial intelligence has changed how students learn almost overnight. But speed isn't the same as depth.</div>
+        <div class="blog-excerpt">Speed isn't the same as depth. What the data actually says about AI and student learning.</div>
       </div>
       <div class="blog-arrow">→</div>
-    </div>
-    <div class="blog-item">
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/02/can-ai-replace-teachers-what-research.html" target="_blank">
       <div class="blog-date">Feb 2026</div>
       <div>
         <div class="blog-title">Can AI Replace Teachers? What Research Actually Says</div>
-        <div class="blog-excerpt">Every few months someone makes this claim. Here's what the data, and my own experience, actually shows.</div>
+        <div class="blog-excerpt">Every few months someone makes this claim. Here's what the data, and my own experience, shows.</div>
       </div>
       <div class="blog-arrow">→</div>
-    </div>
-    <div class="blog-item">
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/01/how-i-use-ai-as-tutor-without-letting.html" target="_blank">
       <div class="blog-date">Jan 2026</div>
       <div>
         <div class="blog-title">How I Use AI as a Tutor Without Letting It Think for Me</div>
-        <div class="blog-excerpt">The difference between using AI as a crutch versus using it as a sparring partner for your own thinking.</div>
+        <div class="blog-excerpt">The difference between using AI as a crutch versus a sparring partner for your own thinking.</div>
       </div>
       <div class="blog-arrow">→</div>
-    </div>
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/01/using-ai-effectively-for-learning.html" target="_blank">
+      <div class="blog-date">Jan 2026</div>
+      <div>
+        <div class="blog-title">Using AI Effectively for Learning: An Oxford-Informed Perspective</div>
+        <div class="blog-excerpt">What cognitive science and Oxford research says about how AI should and shouldn't be used for learning.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
+    <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/01/artificial-intelligence-meaning-and.html" target="_blank">
+      <div class="blog-date">Jan 2026</div>
+      <div>
+        <div class="blog-title">Artificial Intelligence: Meaning and Types</div>
+        <div class="blog-excerpt">A clear breakdown of what AI actually is, the different types, and why the distinctions matter.</div>
+      </div>
+      <div class="blog-arrow">→</div>
+    </a>
   </div>
+  <a class="view-all" href="https://itsreadingtimee.blogspot.com" target="_blank">View all posts →</a>
 </section>
 
 <footer>
-  <div class="footer-name">Aditya<span>.</span></div>
+  <div class="footer-name">Ayush<span>.</span></div>
   <div class="footer-links">
     <a href="https://github.com/ak3036811-gif" target="_blank">GitHub</a>
-    <a href="#blog">Blog</a>
-    <a href="mailto:your.email@gmail.com">Email</a>
+    <a href="https://itsreadingtimee.blogspot.com" target="_blank">Blog</a>
+    <a href="mailto:Ayushk3036811@gmail.com">Email</a>
   </div>
-  <div class="footer-copy">© 2026 Aditya Kumar</div>
+  <div class="footer-copy">© 2026 Ayush Kumar</div>
 </footer>
 
 </body>
