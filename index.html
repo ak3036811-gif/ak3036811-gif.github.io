@@ -3,157 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayush Kumar — AI Research & Writing</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Ayush Kumar — AI Researcher & Educator</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#08070f;--surface:#0f0d1a;--purple:#9b6dff;--purple-light:#c4a8ff;--purple-dim:rgba(155,109,255,0.12);--pink:#ff6ef7;--white:#f0eeff;--muted:#6b6480;--border:#1e1a2e}
-body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+:root{
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --ink:#0d0d0d;
+  --ink2:#3a3a3a;
+  --ink3:#777;
+  --purple:#5b3ff8;
+  --purple-soft:#ede9ff;
+  --border:#e8e8e4;
+  --surface:#f4f4f0;
+}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(8,7,15,0.92);backdrop-filter:blur(16px);z-index:100}
-.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px}
+
+/* NAV */
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.25rem 4rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(250,250,248,0.96);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;letter-spacing:-0.3px;color:var(--ink)}
 .nav-logo span{color:var(--purple)}
-.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap}
-.nav-links a{font-size:12px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
-.nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--purple);color:#fff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1.25rem;border-radius:2px;transition:opacity 0.2s}
-.nav-cta:hover{opacity:0.85}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink3);letter-spacing:0.02em;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-size:12px;font-weight:600;color:var(--purple);border:1.5px solid var(--purple);padding:0.45rem 1.1rem;border-radius:4px;transition:all 0.2s;letter-spacing:0.02em}
+.nav-cta:hover{background:var(--purple);color:#fff}
 
 /* HERO */
-.hero{padding:7rem 3rem 5rem;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:-10rem;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(155,109,255,0.13) 0%,transparent 70%);pointer-events:none}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:2rem}
-.hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--purple)}
-.hero h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,7vw,6rem);font-weight:800;line-height:0.95;letter-spacing:-2px;margin-bottom:2rem}
-.hero h1 .outline{-webkit-text-stroke:1px rgba(155,109,255,0.6);color:transparent}
-.hero h1 .accent{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{max-width:540px;font-size:17px;color:#9990b5;line-height:1.7;margin-bottom:3rem;font-weight:300}
-.hero-sub strong{color:var(--white);font-weight:500}
+.hero{display:grid;grid-template-columns:1fr 380px;gap:0;min-height:88vh;border-bottom:1px solid var(--border)}
+.hero-left{padding:6rem 4rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border)}
+.hero-right{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:space-between;background:var(--surface)}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:auto}.hero-right{display:none}}
+.hero-kicker{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:2rem}
+.hero-kicker::before{content:'';width:20px;height:1.5px;background:var(--purple)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-1.5px;color:var(--ink);margin-bottom:1.75rem}
+.hero h1 em{font-style:italic;color:var(--purple)}
+.hero-desc{font-size:17px;color:var(--ink2);line-height:1.75;max-width:480px;margin-bottom:3rem;font-weight:300}
+.hero-desc strong{font-weight:600;color:var(--ink)}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-primary{background:var(--purple);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:opacity 0.2s;display:inline-block}
-.btn-primary:hover{opacity:0.85}
-.btn-ghost{border:1px solid var(--border);color:var(--white);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;padding:0.85rem 2rem;border-radius:2px;transition:border-color 0.2s;display:inline-block}
-.btn-ghost:hover{border-color:var(--purple)}
-.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border);flex-wrap:wrap}
-.stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;background:linear-gradient(90deg,var(--purple),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+.btn-fill{background:var(--ink);color:#fff;font-size:13px;font-weight:600;padding:0.8rem 2rem;border-radius:4px;transition:background 0.2s;letter-spacing:0.02em;display:inline-block}
+.btn-fill:hover{background:#222}
+.btn-outline{border:1.5px solid var(--border);color:var(--ink2);font-size:13px;font-weight:500;padding:0.8rem 2rem;border-radius:4px;transition:border-color 0.2s;display:inline-block}
+.btn-outline:hover{border-color:var(--ink)}
+.hero-right-label{font-size:10px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:1.5rem}
+.hero-stat-list{display:flex;flex-direction:column;gap:0}
+.hero-stat{padding:1.25rem 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:baseline}
+.hero-stat:first-child{border-top:1px solid var(--border)}
+.hero-stat-val{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--ink)}
+.hero-stat-label{font-size:12px;color:var(--ink3);font-weight:400}
+.hero-right-bio{margin-top:auto;padding-top:2rem;border-top:1px solid var(--border)}
+.hero-right-bio p{font-size:13px;color:var(--ink3);line-height:1.65}
+.hero-right-bio strong{font-weight:600;color:var(--ink2)}
 
-/* ABOUT */
-.about-strip{padding:5rem 3rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-@media(max-width:768px){.about-strip{grid-template-columns:1fr}}
-.about-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:1rem}
-.about-text{font-size:17px;line-height:1.8;color:#9990b5;font-weight:300}
-.about-text strong{color:var(--white);font-weight:500}
-.about-highlights{display:flex;flex-direction:column;gap:1rem}
-.highlight{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;border:1px solid var(--border);border-radius:6px;transition:border-color 0.2s;background:var(--surface)}
-.highlight:hover{border-color:var(--purple)}
-.highlight-icon{width:36px;height:36px;background:var(--purple-dim);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.highlight-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px;color:var(--white)}
-.highlight-text{font-size:12px;color:var(--muted);line-height:1.5}
+/* DIVIDER BAND */
+.band{padding:1.25rem 4rem;background:var(--ink);color:#fff;display:flex;align-items:center;gap:3rem;overflow:hidden;border-top:1px solid #000}
+.band-item{font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap;opacity:0.7}
+.band-dot{width:4px;height:4px;border-radius:50%;background:var(--purple);flex-shrink:0}
 
-/* SECTION */
-.section-wrap{padding:5rem 3rem;border-top:1px solid var(--border)}
-.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem}
-.section-num{font-family:'Syne',sans-serif;font-size:11px;color:var(--purple);letter-spacing:0.1em}
-.section-title{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;letter-spacing:-0.5px}
+/* SECTIONS */
+.section{padding:5rem 4rem;border-bottom:1px solid var(--border)}
+.section-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem}
+.section-title{font-family:'Playfair Display',serif;font-size:2.25rem;font-weight:700;letter-spacing:-0.5px;color:var(--ink);margin-bottom:3rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--border)}
+@media(max-width:700px){.two-col,.four-col,.three-col{grid-template-columns:1fr}}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--border)}
+@media(max-width:900px){.four-col{grid-template-columns:repeat(2,1fr)}}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--border)}
+@media(max-width:800px){.three-col{grid-template-columns:1fr}}
 
 /* ALGOBRIDGE */
-.algo-hero{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:3rem;margin-bottom:2rem;position:relative;overflow:hidden}
-.algo-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#1db987,#6366f1,var(--purple))}
-.algo-tag{display:inline-block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#1db987;background:rgba(29,185,135,0.1);padding:3px 10px;border-radius:2px;margin-bottom:1rem}
-.algo-title{font-family:'Syne',sans-serif;font-size:2.5rem;font-weight:800;background:linear-gradient(90deg,#1db987,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.5rem}
-.algo-sub{font-size:15px;color:#9990b5;margin-bottom:1.5rem;font-style:italic}
-.algo-desc{font-size:16px;color:#aaa;line-height:1.8;max-width:700px;margin-bottom:2rem}
-.algo-stats{display:flex;gap:2rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid var(--border)}
-.algo-stat-val{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;color:#1db987}
-.algo-stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.07em;margin-top:2px}
+.algo-intro{display:grid;grid-template-columns:2fr 1fr;gap:4rem;margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border);align-items:start}
+@media(max-width:800px){.algo-intro{grid-template-columns:1fr}}
+.algo-name{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--ink);letter-spacing:-1px;margin-bottom:0.5rem}
+.algo-name span{color:var(--purple)}
+.algo-tagline{font-size:15px;color:var(--ink3);margin-bottom:1.5rem;font-style:italic}
+.algo-body{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300}
+.algo-body strong{font-weight:600;color:var(--ink)}
+.algo-numbers{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.algo-num-item{background:var(--bg);padding:1.25rem 1.5rem}
+.algo-num-val{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--purple)}
+.algo-num-label{font-size:11px;color:var(--ink3);font-weight:400;margin-top:2px;letter-spacing:0.02em}
 
-.algo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:1px}
-@media(max-width:700px){.algo-grid{grid-template-columns:1fr}}
-.algo-card{background:var(--bg);padding:2rem;transition:background 0.2s}
-.algo-card:hover{background:var(--surface)}
-.algo-card-num{font-family:'Syne',sans-serif;font-size:11px;color:#1db987;letter-spacing:0.1em;margin-bottom:0.5rem}
-.algo-card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:0.75rem;color:var(--white)}
-.algo-card-text{font-size:13px;color:#6b6480;line-height:1.6}
-.algo-activities{display:flex;flex-wrap:wrap;gap:8px;margin-top:1rem}
-.algo-activity{font-size:11px;color:var(--purple-light);background:var(--purple-dim);padding:4px 10px;border-radius:2px;letter-spacing:0.04em}
-
-/* TEACHING PHOTOS */
-.photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:2rem}
+/* PHOTOS */
+.photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:3rem}
 @media(max-width:600px){.photos-grid{grid-template-columns:repeat(2,1fr)}}
-.photo-slot{aspect-ratio:16/9;overflow:hidden;background:var(--surface);position:relative}
-.photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.3s}
-.photo-slot:hover img{transform:scale(1.04)}
-.photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--muted);font-size:12px;text-align:center;padding:1rem}
-.photo-placeholder span{font-size:24px}
+.photo-slot{aspect-ratio:4/3;overflow:hidden;background:var(--surface);position:relative}
+.photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
+.photo-slot:hover img{transform:scale(1.05)}
+.photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--ink3);font-size:11px;letter-spacing:0.05em;text-transform:uppercase}
 
-/* QUOTE BLOCK */
-.algo-quote{padding:2.5rem 3rem;background:linear-gradient(135deg,rgba(29,185,135,0.06),rgba(155,109,255,0.06));border-left:3px solid #1db987;margin-top:2rem;border-radius:0 6px 6px 0}
-.algo-quote p{font-family:'DM Sans',sans-serif;font-size:20px;font-style:italic;color:var(--white);line-height:1.6;margin-bottom:0.5rem}
-.algo-quote cite{font-size:13px;color:var(--muted)}
+/* SESSION CARDS */
+.session-card{background:var(--bg);padding:2rem;border-right:none}
+.session-card:last-child{border-right:none}
+.session-num{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem}
+.session-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:0.75rem;line-height:1.3}
+.session-text{font-size:13px;color:var(--ink3);line-height:1.65;margin-bottom:1rem}
+.session-tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);padding:3px 9px;border-radius:3px}
+
+/* OUTCOMES */
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3rem;padding-top:3rem;border-top:1px solid var(--border)}
+@media(max-width:700px){.outcomes-grid{grid-template-columns:1fr}}
+.outcome-item{display:flex;gap:1rem;align-items:flex-start}
+.outcome-check{width:20px;height:20px;border-radius:50%;background:var(--purple-soft);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--purple);flex-shrink:0;margin-top:2px}
+.outcome-text{font-size:14px;color:var(--ink2);line-height:1.6}
+
+/* PULLQUOTE */
+.pullquote{padding:3rem 4rem;background:var(--ink);margin-top:3rem;border-radius:4px}
+.pullquote p{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;color:#fff;line-height:1.55;margin-bottom:1rem}
+.pullquote cite{font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;letter-spacing:0.06em;text-transform:uppercase}
 
 /* CERTS */
-.cert-row{display:grid;gap:1px;background:var(--border);margin-bottom:1px}
-.cert-row-2{grid-template-columns:1fr 1fr}
-.cert-row-4{grid-template-columns:repeat(4,1fr)}
-@media(max-width:900px){.cert-row-4{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.cert-row-2,.cert-row-4{grid-template-columns:1fr}}
-.cert-card{background:var(--bg);padding:1.75rem;transition:background 0.2s;position:relative;overflow:hidden}
-.cert-card:hover{background:var(--surface)}
-.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
-.cert-card:hover::before{transform:scaleX(1)}
-.cert-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);background:var(--purple-dim);padding:3px 10px;border-radius:2px;margin-bottom:1rem}
-.cert-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;line-height:1.3;margin-bottom:0.5rem;color:var(--white)}
-.cert-card.big .cert-title{font-size:18px}
-.cert-meta{font-size:12px;color:var(--muted);line-height:1.5}
-.cert-verify{display:inline-block;margin-top:0.75rem;font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:0.05em;transition:color 0.2s}
-.cert-verify:hover{color:var(--purple-light)}
-.cert-award{display:inline-block;margin-top:0.75rem;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#ffd700;background:rgba(255,215,0,0.1);padding:3px 10px;border-radius:2px}
+.cert-card{background:var(--bg);padding:2rem}
+.cert-issuer{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.6rem}
+.cert-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);line-height:1.3;margin-bottom:0.5rem}
+.cert-meta{font-size:12px;color:var(--ink3);line-height:1.5}
+.cert-link{display:inline-block;margin-top:0.75rem;font-size:11px;font-weight:600;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
+.cert-award{display:inline-block;margin-top:0.6rem;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#b8860b;background:#fff9e6;border:1px solid #f0d060;padding:3px 10px;border-radius:3px}
 
 /* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--border)}
-.skill-item{background:var(--bg);padding:1.5rem;transition:background 0.2s}
-.skill-item:hover{background:var(--surface)}
-.skill-icon{font-size:22px;margin-bottom:0.75rem}
-.skill-name{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:0.25rem}
-.skill-level{font-size:11px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
-.skill-bar{width:100%;height:2px;background:#1e1a2e;margin-top:0.75rem;border-radius:1px}
-.skill-fill{height:100%;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:1px}
+.skill-card{background:var(--bg);padding:2rem}
+.skill-icon{font-size:1.5rem;margin-bottom:0.75rem}
+.skill-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:0.25rem}
+.skill-level{font-size:11px;color:var(--ink3);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:0.75rem}
+.skill-bar{height:2px;background:var(--border);border-radius:1px}
+.skill-fill{height:100%;background:var(--purple);border-radius:1px}
 
 /* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border)}
-.project-card{background:var(--bg);padding:2rem;position:relative;overflow:hidden;transition:background 0.2s}
+.project-card{background:var(--bg);padding:2.25rem;position:relative;overflow:hidden;transition:background 0.2s}
 .project-card:hover{background:var(--surface)}
-.project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--purple),var(--pink));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
-.project-card:hover::before{transform:scaleX(1)}
-.project-tag{display:inline-block;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);background:var(--purple-dim);padding:3px 8px;border-radius:2px;margin-bottom:1rem}
-.project-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:0.75rem;line-height:1.3}
-.project-desc{font-size:14px;color:#6b6480;line-height:1.65;margin-bottom:1.5rem}
+.project-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--purple);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.project-card:hover::after{transform:scaleX(1)}
+.project-type{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple);margin-bottom:0.75rem}
+.project-name{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--ink);margin-bottom:0.75rem;line-height:1.25}
+.project-desc{font-size:13px;color:var(--ink3);line-height:1.65;margin-bottom:1.5rem}
 .project-footer{display:flex;justify-content:space-between;align-items:center}
-.project-lang{font-size:12px;color:var(--muted)}
-.project-link{font-size:12px;color:var(--purple);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
-.project-link:hover{color:var(--purple-light)}
+.project-stack{font-size:11px;color:var(--ink3);font-weight:400}
+.project-link{font-size:11px;font-weight:600;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
 
 /* BLOG */
-.blog-list{display:flex;flex-direction:column}
-.blog-item{display:grid;grid-template-columns:80px 1fr auto;gap:2rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border)}
+.blog-item{display:grid;grid-template-columns:90px 1fr 24px;gap:2rem;align-items:start;padding:1.75rem 0;border-bottom:1px solid var(--border);transition:background 0.15s}
+.blog-item:first-child{border-top:1px solid var(--border)}
 @media(max-width:600px){.blog-item{grid-template-columns:1fr;gap:0.5rem}}
-.blog-item:hover .blog-title{color:var(--purple-light)}
+.blog-item:hover .blog-title{color:var(--purple)}
+.blog-date{font-size:11px;color:var(--ink3);font-weight:400;padding-top:2px;letter-spacing:0.02em}
+.blog-title{font-size:15px;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:0.3rem;transition:color 0.2s}
+.blog-excerpt{font-size:13px;color:var(--ink3);line-height:1.55}
+.blog-arrow{color:var(--ink3);font-size:16px;padding-top:2px;transition:color 0.2s}
 .blog-item:hover .blog-arrow{color:var(--purple)}
-.blog-date{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;padding-top:3px}
-.blog-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:0.4rem;transition:color 0.2s}
-.blog-excerpt{font-size:13px;color:#6b6480;line-height:1.55}
-.blog-arrow{color:var(--muted);font-size:18px;padding-top:2px;transition:color 0.2s}
-.view-all{display:inline-flex;align-items:center;gap:8px;margin-top:2rem;font-size:13px;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;transition:gap 0.2s}
-.view-all:hover{gap:12px}
+.view-all{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;font-size:12px;font-weight:600;color:var(--purple);letter-spacing:0.08em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
 
-footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-name{font-family:'Syne',sans-serif;font-weight:800;font-size:14px}
+/* FOOTER */
+footer{padding:3rem 4rem;border-top:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:1rem}
+@media(max-width:700px){footer{grid-template-columns:1fr;gap:0.75rem}}
+.footer-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--ink)}
 .footer-name span{color:var(--purple)}
-.footer-links{display:flex;gap:1.5rem}
-.footer-links a{font-size:12px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
-.footer-links a:hover{color:var(--white)}
-.footer-copy{font-size:11px;color:#2e2a45}
+.footer-links{display:flex;gap:1.75rem;justify-content:center}
+.footer-links a{font-size:12px;font-weight:500;color:var(--ink3);letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s}
+.footer-links a:hover{color:var(--ink)}
+.footer-copy{font-size:11px;color:var(--ink3);text-align:right}
 </style>
 </head>
 <body>
@@ -163,259 +173,227 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
   <div class="nav-links">
     <a href="#about">About</a>
     <a href="#algobridge">AlgoBridge</a>
-    <a href="#certs">Credentials</a>
+    <a href="#credentials">Credentials</a>
     <a href="#projects">Projects</a>
-    <a href="#blog">Writing</a>
+    <a href="#writing">Writing</a>
   </div>
   <a class="nav-cta" href="https://github.com/ak3036811-gif" target="_blank">GitHub ↗</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero" id="about">
-  <div class="hero-glow"></div>
-  <div class="hero-eyebrow">Open to research collaborations</div>
-  <h1>I build<br><span class="outline">AI systems</span><br>that <span class="accent">actually</span> work.</h1>
-  <p class="hero-sub">I'm <strong>Ayush Kumar</strong>, a Grade 11 student certified by Harvard, Stanford & AWS — who builds AI systems, teaches digital literacy to underserved students, and writes about what I find.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="#algobridge">My Teaching Work</a>
-    <a class="btn-ghost" href="#projects">GitHub Projects</a>
+  <div class="hero-left">
+    <div class="hero-kicker">AI Researcher · Educator · Builder</div>
+    <h1>Building at the edge of<br><em>intelligence</em> and education.</h1>
+    <p class="hero-desc">
+      I'm <strong>Ayush Kumar</strong> — a Grade 11 student from Ghaziabad, India. I design adaptive AI systems, run workshops that bring digital literacy to underserved students, and write about what I find — not just what papers say.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-fill" href="#algobridge">View My Work</a>
+      <a class="btn-outline" href="#writing">Read My Writing</a>
+    </div>
   </div>
-  <div class="hero-stats">
-    <div><div class="stat-val">10+</div><div class="stat-label">Certifications</div></div>
-    <div><div class="stat-val">7+</div><div class="stat-label">Blogs published</div></div>
-    <div><div class="stat-val">4+</div><div class="stat-label">Projects published</div></div>
-    <div><div class="stat-val">2nd</div><div class="stat-label">GSAP Pitching Finale</div></div>
+  <div class="hero-right">
+    <div>
+      <div class="hero-right-label">At a Glance</div>
+      <div class="hero-stat-list">
+        <div class="hero-stat"><span class="hero-stat-val">10+</span><span class="hero-stat-label">Certifications earned</span></div>
+        <div class="hero-stat"><span class="hero-stat-val">7+</span><span class="hero-stat-label">Research blogs published</span></div>
+        <div class="hero-stat"><span class="hero-stat-val">4+</span><span class="hero-stat-label">GitHub projects</span></div>
+        <div class="hero-stat"><span class="hero-stat-val">2nd</span><span class="hero-stat-label">GSAP Pitching Finale</span></div>
+      </div>
+    </div>
+    <div class="hero-right-bio">
+      <p>Certified by <strong>Harvard, Stanford</strong> & <strong>AWS</strong>. Founded <strong>AlgoBridge</strong> — an initiative teaching algorithms and AI to students in underserved schools with zero prior coding knowledge required.</p>
+    </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-strip">
-  <div>
-    <div class="about-label">Who I am</div>
-    <p class="about-text">I don't just read about AI — I <strong>build prototypes, run experiments, and teach what I learn</strong> to students from under-resourced communities. My work sits at the intersection of intelligence, interaction, and education.</p>
-  </div>
-  <div class="about-highlights">
-    <div class="highlight"><div class="highlight-icon">🧠</div><div><div class="highlight-title">AI Research</div><div class="highlight-text">Adaptive systems, human-AI interaction, learning models</div></div></div>
-    <div class="highlight"><div class="highlight-icon">🎮</div><div><div class="highlight-title">Game System Design</div><div class="highlight-text">Building intelligent, adaptive game mechanics from scratch</div></div></div>
-    <div class="highlight"><div class="highlight-icon">📢</div><div><div class="highlight-title">Community Teaching</div><div class="highlight-text">Workshops helping students responsibly use AI tools</div></div></div>
-  </div>
-</section>
+<!-- BAND -->
+<div class="band">
+  <span class="band-item">Harvard CS50AI</span><div class="band-dot"></div>
+  <span class="band-item">Stanford Engineering</span><div class="band-dot"></div>
+  <span class="band-item">AWS Certified</span><div class="band-dot"></div>
+  <span class="band-item">IBM SkillsBuild</span><div class="band-dot"></div>
+  <span class="band-item">AlgoBridge Founder</span><div class="band-dot"></div>
+  <span class="band-item">Belong GSAP · 2nd Place</span><div class="band-dot"></div>
+  <span class="band-item">Data Science · DOT Glasses</span>
+</div>
 
 <!-- ALGOBRIDGE -->
-<section class="section-wrap" id="algobridge">
-  <div class="section-header">
-    <span class="section-num">01 —</span>
-    <h2 class="section-title">AlgoBridge — Community Impact</h2>
-  </div>
-
-  <div class="algo-hero">
-    <div class="algo-tag">Graduation Pitch · Grade 11 · MNB Modern Senior Secondary School</div>
-    <div class="algo-title">AlgoBridge</div>
-    <div class="algo-sub">Algorithm + Bridge — a bridge that connects algorithms to everyday life.</div>
-    <p class="algo-desc">
-      Millions of students graduate without ever understanding algorithms or AI — the engines powering the modern world. Witnessing how DOT Glasses transformed lives with simple clear vision, I saw a parallel: digital literacy is the clear vision of the 21st century. So I built AlgoBridge — running 4 interactive workshops for students aged 11–18 in underserved schools, with zero prior coding knowledge required. The results exceeded every expectation.
-    </p>
-    <div class="algo-stats">
-      <div><div class="algo-stat-val">4</div><div class="algo-stat-label">Workshop sessions</div></div>
-      <div><div class="algo-stat-val">11–18</div><div class="algo-stat-label">Target age group</div></div>
-      <div><div class="algo-stat-val">100%</div><div class="algo-stat-label">Interactive learning</div></div>
-      <div><div class="algo-stat-val">0</div><div class="algo-stat-label">Prior coding needed</div></div>
+<section class="section" id="algobridge">
+  <div class="section-label">Community Impact</div>
+  <div class="algo-intro">
+    <div>
+      <div class="algo-name">Algo<span>Bridge</span></div>
+      <div class="algo-tagline">Algorithm + Bridge — bridging the gap between algorithms and every student's future.</div>
+      <p class="algo-body">
+        Witnessing how DOT Glasses transformed lives in marginalized communities with simple clear vision, I saw a parallel: <strong>digital literacy is the clear vision of the 21st century.</strong> Millions of students graduate without ever understanding algorithms or AI — the engines powering the modern world. So I built AlgoBridge, running four interactive workshops for students aged 11–18 in underserved schools. No jargon, no code, no prior knowledge required. Just curiosity — and the belief that <strong>every student deserves to understand the technology shaping their world.</strong>
+      </p>
+      <div class="outcomes-grid">
+        <div class="outcome-item"><div class="outcome-check">✓</div><div class="outcome-text">High engagement and active participation from all students across every session</div></div>
+        <div class="outcome-item"><div class="outcome-check">✓</div><div class="outcome-text">Students asked deep, curious questions about AI — unprompted</div></div>
+        <div class="outcome-item"><div class="outcome-check">✓</div><div class="outcome-text">Even beginners with zero tech background grasped foundational concepts clearly</div></div>
+        <div class="outcome-item"><div class="outcome-check">✓</div><div class="outcome-text">Interactive approach proved more effective than traditional lecture-style teaching</div></div>
+      </div>
+    </div>
+    <div class="algo-numbers">
+      <div class="algo-num-item"><div class="algo-num-val">4</div><div class="algo-num-label">Workshop sessions conducted</div></div>
+      <div class="algo-num-item"><div class="algo-num-val">11–18</div><div class="algo-num-label">Target age group</div></div>
+      <div class="algo-num-item"><div class="algo-num-val">100%</div><div class="algo-num-label">Interactive, choice-based learning</div></div>
+      <div class="algo-num-item"><div class="algo-num-val">0</div><div class="algo-num-label">Prior coding knowledge required</div></div>
+      <div class="algo-num-item"><div class="algo-num-val">2nd</div><div class="algo-num-label">Place — GSAP Pitching Finale</div></div>
     </div>
   </div>
 
-  <!-- Teaching Photos -->
+  <!-- PHOTOS -->
   <div class="photos-grid">
-    <!-- Replace photo1.jpeg, photo2.jpeg etc with your actual uploaded image filenames -->
-    <div class="photo-slot"><img src="photo1.jpeg" alt="Teaching session — What is Debugging?" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo1.jpeg</div>'"></div>
-    <div class="photo-slot"><img src="photo2.jpeg" alt="Teaching session — What is Coding?" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo2.jpeg</div>'"></div>
-    <div class="photo-slot"><img src="photo3.jpeg" alt="Teaching session — What is an Algorithm?" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo3.jpeg</div>'"></div>
-    <div class="photo-slot"><img src="photo4.jpeg" alt="Teaching session — AI in Search" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo4.jpeg</div>'"></div>
-    <div class="photo-slot"><img src="photo5.jpeg" alt="Teaching session — Ranking" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo5.jpeg</div>'"></div>
-    <div class="photo-slot"><img src="photo6.jpeg" alt="Teaching session — Discussion" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>📸</span>Upload photo6.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo1.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo1.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo2.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo2.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo3.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo3.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo4.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo4.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo5.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo5.jpeg</div>'"></div>
+    <div class="photo-slot"><img src="photo6.jpeg" alt="AlgoBridge workshop session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo6.jpeg</div>'"></div>
   </div>
 
-  <!-- Workshop Sessions -->
-  <div class="algo-grid" style="margin-bottom:1px">
-    <div class="algo-card">
-      <div class="algo-card-num">SESSION 01</div>
-      <div class="algo-card-title">Algorithms Basics & Decision Making</div>
-      <div class="algo-card-text">Introduced algorithms as step-by-step decision systems — no jargon, no code. Just logic expressed through everyday choices. Students became the algorithm themselves.</div>
-      <div class="algo-activities">
-        <span class="algo-activity">Decision Tree Slides</span>
-        <span class="algo-activity">Predict the Flow</span>
-        <span class="algo-activity">Human Algorithm</span>
-      </div>
+  <!-- SESSIONS -->
+  <div class="two-col" style="margin-bottom:1px">
+    <div class="session-card">
+      <div class="session-num">Session 01</div>
+      <div class="session-title">Algorithms Basics & Decision Making</div>
+      <div class="session-text">Introduced algorithms as step-by-step decision systems using everyday logic. Students physically acted as sorting algorithms — no screens, no code, pure understanding.</div>
+      <div class="session-tags"><span class="tag">Decision Trees</span><span class="tag">Human Algorithm</span><span class="tag">Predict the Flow</span></div>
     </div>
-    <div class="algo-card">
-      <div class="algo-card-num">SESSION 02</div>
-      <div class="algo-card-title">How Google Search Works</div>
-      <div class="algo-card-text">Brought AI to life through one of the most familiar tools: Google Search. By reverse-engineering how results are ranked, students became the search algorithm.</div>
-      <div class="algo-activities">
-        <span class="algo-activity">Page Ranking Game</span>
-        <span class="algo-activity">Link Counting</span>
-        <span class="algo-activity">Bias Discussion</span>
-      </div>
+    <div class="session-card">
+      <div class="session-num">Session 02</div>
+      <div class="session-title">How Google Search Works</div>
+      <div class="session-text">Reverse-engineered Google's PageRank algorithm through a live ranking game. Students became the search engine — counting links, judging relevance, debating bias.</div>
+      <div class="session-tags"><span class="tag">Page Ranking Game</span><span class="tag">Link Counting</span><span class="tag">Bias Discussion</span></div>
     </div>
   </div>
-  <div class="algo-grid">
-    <div class="algo-card">
-      <div class="algo-card-num">SESSION 03</div>
-      <div class="algo-card-title">What is Coding & Debugging?</div>
-      <div class="algo-card-text">Demystified coding as simply giving instructions to a computer. Interactive debugging exercises — students clicked bugs to fix code — made abstract concepts click instantly.</div>
-      <div class="algo-activities">
-        <span class="algo-activity">Robot Instructions</span>
-        <span class="algo-activity">Bug Fixing Activity</span>
-        <span class="algo-activity">Sandwich Algorithm</span>
-      </div>
+  <div class="two-col">
+    <div class="session-card">
+      <div class="session-num">Session 03</div>
+      <div class="session-title">What is Coding & Debugging?</div>
+      <div class="session-text">Demystified coding as simply giving instructions to a computer. Students commanded robots and clicked bugs to fix code — turning abstract into tangible in minutes.</div>
+      <div class="session-tags"><span class="tag">Robot Instructions</span><span class="tag">Bug Fixing</span><span class="tag">Sandwich Algorithm</span></div>
     </div>
-    <div class="algo-card">
-      <div class="algo-card-num">SESSION 04</div>
-      <div class="algo-card-title">AI in Search & Real-World Impact</div>
-      <div class="algo-card-text">Showed how AI reads context, not just keywords — using Mercury as an example (Planet? Element? Band?). Students ran live search experiments and compared results.</div>
-      <div class="algo-activities">
-        <span class="algo-activity">Live Search Experiment</span>
-        <span class="algo-activity">AI Context Demo</span>
-        <span class="algo-activity">Discussion Round</span>
-      </div>
+    <div class="session-card">
+      <div class="session-num">Session 04</div>
+      <div class="session-title">AI in Search & Everyday Life</div>
+      <div class="session-text">Showed how AI reads context, not just keywords — using real search experiments where students compared results and discovered algorithmic bias firsthand.</div>
+      <div class="session-tags"><span class="tag">Live Search Experiment</span><span class="tag">AI Context</span><span class="tag">Critical Thinking</span></div>
     </div>
   </div>
 
-  <!-- Results -->
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:1px">
-    <div style="background:var(--bg);padding:2rem">
-      <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#1db987;margin-bottom:1rem">Outcomes & Impact</div>
-      <div style="display:flex;flex-direction:column;gap:0.75rem">
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#aaa;padding:0.75rem;background:var(--surface);border-radius:4px">✅ High engagement and active participation from all students</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#aaa;padding:0.75rem;background:var(--surface);border-radius:4px">✅ Students asked deep, curious questions about AI and tech</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#aaa;padding:0.75rem;background:var(--surface);border-radius:4px">✅ Improved foundational understanding of algorithms and AI</div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:14px;color:#aaa;padding:0.75rem;background:var(--surface);border-radius:4px">✅ Even beginners grasped key concepts clearly</div>
-      </div>
-    </div>
-    <div style="background:var(--bg);padding:2rem">
-      <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--purple-light);margin-bottom:1rem">What I Took Away</div>
-      <div style="display:flex;flex-direction:column;gap:0.75rem">
-        <div style="padding:0.75rem;border-left:2px solid #1db987;background:var(--surface);border-radius:0 4px 4px 0"><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px">Interactivity is Everything</div><div style="font-size:12px;color:var(--muted)">The moment students had to make a choice, attention sharpened instantly.</div></div>
-        <div style="padding:0.75rem;border-left:2px solid var(--purple);background:var(--surface);border-radius:0 4px 4px 0"><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px">Simplicity Bridges Complexity</div><div style="font-size:12px;color:var(--muted)">Once a student saw an algorithm in a recipe, everything clicked.</div></div>
-        <div style="padding:0.75rem;border-left:2px solid var(--pink);background:var(--surface);border-radius:0 4px 4px 0"><div style="font-size:13px;font-weight:500;color:var(--white);margin-bottom:3px">Empathy Drives Better Teaching</div><div style="font-size:12px;color:var(--muted)">Understanding what students didn't know was more valuable than knowing the subject.</div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="algo-quote">
+  <div class="pullquote">
     <p>"If a student walks away thinking 'I get it' — that is the whole point."</p>
-    <cite>— Ayush Kumar, AlgoBridge</cite>
+    <cite>— Ayush Kumar, Founder · AlgoBridge</cite>
   </div>
 </section>
 
-<!-- CERTIFICATIONS -->
-<section class="section-wrap" id="certs">
-  <div class="section-header">
-    <span class="section-num">02 —</span>
-    <h2 class="section-title">Credentials & Certifications</h2>
-  </div>
-  <div class="cert-row cert-row-2">
-    <div class="cert-card big">
-      <div class="cert-badge">🎓 Harvard University</div>
-      <div class="cert-title">CS50's Intro to Artificial Intelligence with Python</div>
-      <div class="cert-meta">12 projects completed · Awarded 2026 · Cambridge, MA</div>
-      <a class="cert-verify" href="https://cs50.harvard.edu/certificates/ca4c9851-4c43-4b19-9531-727160036738" target="_blank">Verify certificate →</a>
-    </div>
-    <div class="cert-card big">
-      <div class="cert-badge">🎓 Harvard University</div>
-      <div class="cert-title">CS50's Intro to Programming with Python</div>
-      <div class="cert-meta">9 problem sets + final project · Awarded 2026 · Cambridge, MA</div>
-      <a class="cert-verify" href="https://cs50.harvard.edu/certificates/965db1ed-410f-4d7a-9215-b9a084235abb" target="_blank">Verify certificate →</a>
-    </div>
-  </div>
-  <div class="cert-row cert-row-2">
+<!-- CREDENTIALS -->
+<section class="section" id="credentials">
+  <div class="section-label">Education & Credentials</div>
+  <div class="section-title">Certifications</div>
+
+  <div class="two-col" style="margin-bottom:1px">
     <div class="cert-card">
-      <div class="cert-badge">🏛 Stanford Engineering</div>
+      <div class="cert-issuer">Harvard University · Cambridge, MA</div>
+      <div class="cert-title">CS50's Introduction to Artificial Intelligence with Python</div>
+      <div class="cert-meta">Completed 12 projects · Awarded 2026</div>
+      <a class="cert-link" href="https://cs50.harvard.edu/certificates/ca4c9851-4c43-4b19-9531-727160036738" target="_blank">Verify credential →</a>
+    </div>
+    <div class="cert-card">
+      <div class="cert-issuer">Harvard University · Cambridge, MA</div>
+      <div class="cert-title">CS50's Introduction to Programming with Python</div>
+      <div class="cert-meta">9 problem sets + final project · Awarded 2026</div>
+      <a class="cert-link" href="https://cs50.harvard.edu/certificates/965db1ed-410f-4d7a-9215-b9a084235abb" target="_blank">Verify credential →</a>
+    </div>
+  </div>
+  <div class="two-col" style="margin-bottom:1px">
+    <div class="cert-card">
+      <div class="cert-issuer">Stanford Engineering · Center for Global & Online Education</div>
       <div class="cert-title">Generative AI: Technology, Business & Society</div>
-      <div class="cert-meta">Nov–Dec 2025 · Center for Global & Online Education</div>
+      <div class="cert-meta">Nov–Dec 2025</div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge">🏛 Stanford Engineering</div>
+      <div class="cert-issuer">Stanford Engineering · Center for Global & Online Education</div>
       <div class="cert-title">Introduction to Internet of Things</div>
-      <div class="cert-meta">Nov 2025–Jan 2026 · Center for Global & Online Education</div>
+      <div class="cert-meta">Nov 2025–Jan 2026</div>
     </div>
   </div>
-  <div class="cert-row cert-row-4">
-    <div class="cert-card"><div class="cert-badge">☁️ AWS</div><div class="cert-title">Generative AI for Executives</div><div class="cert-meta">Sep 12, 2025</div></div>
-    <div class="cert-card"><div class="cert-badge">☁️ AWS</div><div class="cert-title">Intro to Generative AI — Art of the Possible</div><div class="cert-meta">Sep 10, 2025</div></div>
-    <div class="cert-card"><div class="cert-badge">☁️ AWS</div><div class="cert-title">Foundations of Prompt Engineering</div><div class="cert-meta">Sep 10, 2025</div></div>
-    <div class="cert-card"><div class="cert-badge">🔵 IBM SkillsBuild</div><div class="cert-title">AI Literacy</div><div class="cert-meta">Nov 23, 2025</div></div>
+  <div class="four-col" style="margin-bottom:1px">
+    <div class="cert-card"><div class="cert-issuer">Amazon Web Services</div><div class="cert-title">Generative AI for Executives</div><div class="cert-meta">Sep 12, 2025</div></div>
+    <div class="cert-card"><div class="cert-issuer">Amazon Web Services</div><div class="cert-title">Introduction to Generative AI — Art of the Possible</div><div class="cert-meta">Sep 10, 2025</div></div>
+    <div class="cert-card"><div class="cert-issuer">Amazon Web Services</div><div class="cert-title">Foundations of Prompt Engineering</div><div class="cert-meta">Sep 10, 2025</div></div>
+    <div class="cert-card"><div class="cert-issuer">IBM SkillsBuild</div><div class="cert-title">AI Literacy</div><div class="cert-meta">Nov 23, 2025</div></div>
   </div>
-  <div class="cert-row cert-row-2">
+  <div class="two-col">
     <div class="cert-card">
-      <div class="cert-badge">🌍 Belong Education</div>
-      <div class="cert-title">Virtual Global Apprenticeship — Data Science</div>
-      <div class="cert-meta">DOT Glasses Project · Jan 22 – Mar 4, 2026</div>
+      <div class="cert-issuer">Belong Education · Virtual Global Apprenticeship</div>
+      <div class="cert-title">Data Science — DOT Glasses Project</div>
+      <div class="cert-meta">Jan 22 – Mar 4, 2026</div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge">🏆 GSAP — Belong</div>
+      <div class="cert-issuer">Belong Education · Global Summer Apprenticeship Program</div>
       <div class="cert-title">Certificate of Excellence — Pitching Finale</div>
-      <div class="cert-meta">Global Summer Apprenticeship Program</div>
+      <div class="cert-meta">Competed against international participants</div>
       <div class="cert-award">🥈 2nd Place</div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section-wrap" id="skills">
-  <div class="section-header">
-    <span class="section-num">03 —</span>
-    <h2 class="section-title">Skills & Stack</h2>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-item"><div class="skill-icon">🐍</div><div class="skill-name">Python</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-    <div class="skill-item"><div class="skill-icon">🤖</div><div class="skill-name">Machine Learning</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
-    <div class="skill-item"><div class="skill-icon">🔗</div><div class="skill-name">LLM APIs</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-    <div class="skill-item"><div class="skill-icon">✍️</div><div class="skill-name">Prompt Engineering</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-    <div class="skill-item"><div class="skill-icon">📊</div><div class="skill-name">Data Science</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
-    <div class="skill-item"><div class="skill-icon">🌐</div><div class="skill-name">Web Dev</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
+<section class="section">
+  <div class="section-label">Technical Proficiency</div>
+  <div class="section-title">Skills & Stack</div>
+  <div class="three-col" style="background:var(--border);gap:1px">
+    <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name">Python</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">🤖</div><div class="skill-name">Machine Learning</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">🔗</div><div class="skill-name">LLM APIs</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">✍️</div><div class="skill-name">Prompt Engineering</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">Data Science</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+    <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">Web Development</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="section-wrap" id="projects">
-  <div class="section-header">
-    <span class="section-num">04 —</span>
-    <h2 class="section-title">GitHub Projects</h2>
-  </div>
-  <div class="projects-grid">
+<section class="section" id="projects">
+  <div class="section-label">Open Source</div>
+  <div class="section-title">GitHub Projects</div>
+  <div class="two-col" style="background:var(--border);gap:1px">
     <div class="project-card">
-      <div class="project-tag">Game Dev</div>
-      <div class="project-title">Nebula Dash</div>
+      <div class="project-type">Game Development</div>
+      <div class="project-name">Nebula Dash</div>
       <div class="project-desc">A fast-paced space game built from scratch — combining game mechanics design with intelligent level progression systems.</div>
-      <div class="project-footer"><span class="project-lang">Game Development</span><a class="project-link" href="https://github.com/ak3036811-gif/nebula-dash" target="_blank">GitHub →</a></div>
+      <div class="project-footer"><span class="project-stack">Game Development</span><a class="project-link" href="https://github.com/ak3036811-gif/nebula-dash" target="_blank">View on GitHub →</a></div>
     </div>
     <div class="project-card">
-      <div class="project-tag">Game Dev</div>
-      <div class="project-title">Get the Box</div>
-      <div class="project-desc">A puzzle game exploring spatial reasoning and adaptive difficulty — designed to challenge players progressively.</div>
-      <div class="project-footer"><span class="project-lang">Game Development</span><a class="project-link" href="https://github.com/ak3036811-gif/Get-the-box" target="_blank">GitHub →</a></div>
+      <div class="project-type">Game Development</div>
+      <div class="project-name">Get the Box</div>
+      <div class="project-desc">A spatial reasoning puzzle game with adaptive difficulty — designed to progressively challenge players through intelligent level design.</div>
+      <div class="project-footer"><span class="project-stack">Game Development</span><a class="project-link" href="https://github.com/ak3036811-gif/Get-the-box" target="_blank">View on GitHub →</a></div>
     </div>
     <div class="project-card">
-      <div class="project-tag">NLP / Game</div>
-      <div class="project-title">Word Game</div>
-      <div class="project-desc">A language-based game that tests vocabulary and pattern recognition — built to make learning through play actually fun.</div>
-      <div class="project-footer"><span class="project-lang">Python / JS</span><a class="project-link" href="https://github.com/ak3036811-gif/Word-game" target="_blank">GitHub →</a></div>
+      <div class="project-type">NLP · Language Learning</div>
+      <div class="project-name">Word Game</div>
+      <div class="project-desc">A language-based game testing vocabulary and pattern recognition — designed to make learning through play actually effective and fun.</div>
+      <div class="project-footer"><span class="project-stack">Python · JavaScript</span><a class="project-link" href="https://github.com/ak3036811-gif/Word-game" target="_blank">View on GitHub →</a></div>
     </div>
     <div class="project-card">
-      <div class="project-tag">CS Education</div>
-      <div class="project-title">CS50.dev</div>
-      <div class="project-desc">My CS50 coursework — documenting the journey through Harvard's foundational computer science course with 12 AI projects.</div>
-      <div class="project-footer"><span class="project-lang">C · Python · SQL</span><a class="project-link" href="https://github.com/ak3036811-gif/CS50.dev" target="_blank">GitHub →</a></div>
+      <div class="project-type">CS Education · Harvard</div>
+      <div class="project-name">CS50.dev</div>
+      <div class="project-desc">Full CS50 coursework repository — 12 AI projects, 9 Python problem sets, and a final project, documenting my Harvard learning journey end-to-end.</div>
+      <div class="project-footer"><span class="project-stack">C · Python · SQL</span><a class="project-link" href="https://github.com/ak3036811-gif/CS50.dev" target="_blank">View on GitHub →</a></div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
-<section class="section-wrap" id="blog">
-  <div class="section-header">
-    <span class="section-num">05 —</span>
-    <h2 class="section-title">Writing & Research</h2>
-  </div>
+<!-- WRITING -->
+<section class="section" id="writing">
+  <div class="section-label">Research & Essays</div>
+  <div class="section-title">Writing</div>
   <div class="blog-list">
     <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/04/you-had-one-in-ten-to-power-of-twenty.html" target="_blank">
       <div class="blog-date">Apr 2026</div>
@@ -434,7 +412,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
     </a>
     <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/02/can-ai-replace-teachers-what-research.html" target="_blank">
       <div class="blog-date">Feb 2026</div>
-      <div><div class="blog-title">Can AI Replace Teachers? What Research Actually Says</div><div class="blog-excerpt">Every few months someone makes this claim. Here's what the data, and my experience, actually shows.</div></div>
+      <div><div class="blog-title">Can AI Replace Teachers? What Research Actually Says</div><div class="blog-excerpt">Every few months someone makes this claim. Here's what the data, and my own experience, actually shows.</div></div>
       <div class="blog-arrow">→</div>
     </a>
     <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/01/how-i-use-ai-as-tutor-without-letting.html" target="_blank">
@@ -453,7 +431,7 @@ footer{padding:2.5rem 3rem;border-top:1px solid var(--border);display:flex;justi
       <div class="blog-arrow">→</div>
     </a>
   </div>
-  <a class="view-all" href="https://itsreadingtimee.blogspot.com" target="_blank">View all posts →</a>
+  <a class="view-all" href="https://itsreadingtimee.blogspot.com" target="_blank">View all writing →</a>
 </section>
 
 <footer>
