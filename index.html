@@ -10,8 +10,6 @@
 :root{--bg:#fafaf8;--white:#fff;--ink:#0d0d0d;--ink2:#3a3a3a;--ink3:#888;--purple:#4f35d8;--purple-soft:#edeaff;--border:#e4e4e0;--surface:#f4f4f0;--green:#1a7a50;--green-soft:#e6f5ed}
 body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-
-/* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 4rem;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(250,250,248,0.95);backdrop-filter:blur(12px);z-index:100}
 .nav-logo{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--ink)}
 .nav-logo span{color:var(--purple)}
@@ -21,16 +19,16 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .nav-cta{font-size:12px;font-weight:600;color:var(--purple);border:1.5px solid var(--purple);padding:0.4rem 1rem;border-radius:3px;transition:all 0.2s}
 .nav-cta:hover{background:var(--purple);color:#fff}
 @media(max-width:700px){nav{padding:1rem 1.5rem}.nav-links{display:none}}
-
-/* HERO */
 .hero{padding:6rem 4rem 5rem;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 340px;gap:6rem;align-items:center}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:3rem;padding:4rem 1.5rem}}
 .hero-kicker{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--purple);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
 .hero-kicker::before{content:'';width:18px;height:1.5px;background:var(--purple)}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-1px;color:var(--ink);margin-bottom:1.5rem}
 .hero h1 em{font-style:italic;color:var(--purple)}
-.hero-sub{font-size:16px;color:var(--ink2);line-height:1.8;max-width:500px;margin-bottom:2.5rem;font-weight:300}
+.hero-sub{font-size:16px;color:var(--ink2);line-height:1.8;max-width:500px;margin-bottom:1.5rem;font-weight:300}
 .hero-sub strong{font-weight:600;color:var(--ink)}
+.hero-community{font-size:14px;color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2.5rem;font-weight:300;padding:1.25rem 1.5rem;background:var(--surface);border-left:3px solid var(--purple);border-radius:0 4px 4px 0}
+.hero-community strong{font-weight:600;color:var(--ink)}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
 .btn-fill{background:var(--ink);color:#fff;font-size:12px;font-weight:600;padding:0.75rem 1.75rem;border-radius:3px;transition:background 0.2s;letter-spacing:0.03em;display:inline-block}
 .btn-fill:hover{background:#222}
@@ -41,33 +39,24 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .hero-stat:last-child{border-bottom:1px solid var(--border)}
 .hero-stat-val{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--ink);line-height:1}
 .hero-stat-label{font-size:11px;color:var(--ink3);margin-top:3px;font-weight:400}
-
-/* PHILOSOPHY STRIP */
 .philosophy{padding:3rem 4rem;background:var(--ink);border-bottom:1px solid #000}
 @media(max-width:700px){.philosophy{padding:2.5rem 1.5rem}}
 .philosophy p{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);font-style:italic;color:#fff;line-height:1.6;max-width:800px}
 .philosophy p span{color:rgba(255,255,255,0.4)}
-
-/* SECTION SHELL */
 .section{padding:5rem 4rem;border-bottom:1px solid var(--border)}
 @media(max-width:700px){.section{padding:3.5rem 1.5rem}}
 .section-eyebrow{font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--purple);margin-bottom:0.6rem}
 .section-heading{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;letter-spacing:-0.3px;color:var(--ink);margin-bottom:3rem}
-
-/* GRID HELPERS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
 @media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.g2,.g3,.g4{grid-template-columns:1fr}}
 .gc{background:var(--bg);padding:2rem}
-
-/* ALGOBRIDGE */
 .algo-problem{padding:2.5rem;background:var(--surface);border-left:3px solid var(--purple);margin-bottom:3rem;border-radius:0 4px 4px 0}
 .algo-problem-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:0.6rem}
 .algo-problem p{font-size:16px;color:var(--ink2);line-height:1.75;font-weight:300}
 .algo-problem p strong{font-weight:600;color:var(--ink)}
-
 .algo-layout{display:grid;grid-template-columns:1fr 300px;gap:4rem;margin-bottom:3rem;align-items:start}
 @media(max-width:800px){.algo-layout{grid-template-columns:1fr;gap:2rem}}
 .algo-name{font-family:'Playfair Display',serif;font-size:2.75rem;font-weight:700;color:var(--ink);letter-spacing:-1px;margin-bottom:0.4rem}
@@ -75,15 +64,12 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .algo-tagline{font-size:14px;color:var(--ink3);margin-bottom:1.5rem;font-style:italic}
 .algo-desc{font-size:15px;color:var(--ink2);line-height:1.85;font-weight:300}
 .algo-desc strong{font-weight:600;color:var(--ink)}
-
 .impact-box{background:var(--ink);padding:2rem;border-radius:4px}
 .impact-box-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.25rem}
 .impact-num{display:flex;align-items:baseline;gap:6px;padding:0.85rem 0;border-bottom:1px solid rgba(255,255,255,0.08)}
 .impact-num:last-child{border-bottom:none}
 .impact-num-val{font-family:'Playfair Display',serif;font-size:1.75rem;font-weight:700;color:#fff}
 .impact-num-label{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.4}
-
-/* BEFORE/AFTER */
 .bafore-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:3rem}
 @media(max-width:600px){.bafore-grid{grid-template-columns:1fr}}
 .ba-card{background:var(--bg);padding:2rem}
@@ -95,36 +81,20 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .ba-before .ba-pct{color:#c0392b}
 .ba-after .ba-pct{color:var(--green)}
 .ba-desc{font-size:13px;color:var(--ink3);line-height:1.5}
-.ba-note{font-size:11px;color:var(--ink3);margin-top:1.5rem;font-style:italic;padding-top:1rem;border-top:1px solid var(--border)}
-
-/* PHOTOS */
 .photos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:3rem}
 @media(max-width:600px){.photos-grid{grid-template-columns:repeat(2,1fr)}}
 .photo-slot{aspect-ratio:4/3;overflow:hidden;background:var(--surface)}
 .photo-slot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s}
 .photo-slot:hover img{transform:scale(1.05)}
 .photo-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:var(--ink3);font-size:11px;letter-spacing:0.05em;text-transform:uppercase}
-
-/* SESSION CARDS */
-.session-label{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--purple);margin-bottom:0.6rem}
-.session-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:0.6rem;line-height:1.3}
-.session-text{font-size:13px;color:var(--ink3);line-height:1.65;margin-bottom:0.75rem}
-.tag{font-size:10px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--purple);background:var(--purple-soft);padding:2px 8px;border-radius:2px;display:inline-block;margin:2px}
-
-/* OUTCOMES */
 .outcome-list{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2.5rem}
 @media(max-width:600px){.outcome-list{grid-template-columns:1fr}}
 .outcome-item{display:flex;gap:10px;align-items:flex-start}
 .outcome-dot{width:6px;height:6px;border-radius:50%;background:var(--green);flex-shrink:0;margin-top:7px}
 .outcome-text{font-size:13px;color:var(--ink2);line-height:1.6}
-
-/* PULLQUOTE */
 .pullquote{margin-top:3rem;padding:2.5rem;background:var(--white);border:1px solid var(--border);border-left:3px solid var(--ink)}
 .pullquote p{font-family:'Playfair Display',serif;font-size:1.35rem;font-style:italic;color:var(--ink);line-height:1.55;margin-bottom:0.6rem}
 .pullquote cite{font-size:11px;color:var(--ink3);font-weight:500;letter-spacing:0.06em;text-transform:uppercase}
-
-/* PROJECTS */
-.project-type-label{font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--ink3);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:1px solid var(--border)}
 .project-card{background:var(--bg);padding:2rem;position:relative;transition:background 0.2s}
 .project-card:hover{background:var(--white)}
 .project-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--purple);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
@@ -135,8 +105,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .project-footer{display:flex;justify-content:space-between;align-items:center}
 .project-stack{font-size:11px;color:var(--ink3)}
 .project-link{font-size:11px;font-weight:600;color:var(--purple);letter-spacing:0.05em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
-
-/* CERTS BIG */
 .cert-card-big{background:var(--bg);padding:2rem;transition:background 0.2s}
 .cert-card-big:hover{background:var(--white)}
 .cert-issuer-big{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--purple);margin-bottom:0.5rem}
@@ -144,8 +112,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .cert-meta-big{font-size:12px;color:var(--ink3);line-height:1.5}
 .cert-verify-big{display:inline-block;margin-top:0.6rem;font-size:11px;font-weight:600;color:var(--purple);letter-spacing:0.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:2px}
 .cert-award-big{display:inline-block;margin-top:0.6rem;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8a6800;background:#fff8e0;border:1px solid #e8d060;padding:3px 10px;border-radius:3px}
-
-/* WRITING */
 .blog-item{display:grid;grid-template-columns:80px 1fr 20px;gap:2rem;align-items:start;padding:1.5rem 0;border-bottom:1px solid var(--border)}
 .blog-item:first-child{border-top:1px solid var(--border)}
 @media(max-width:600px){.blog-item{grid-template-columns:1fr;gap:0.4rem}}
@@ -156,8 +122,6 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem
 .blog-excerpt{font-size:12px;color:var(--ink3);line-height:1.55}
 .blog-arrow{font-size:14px;color:var(--ink3);transition:color 0.2s}
 .view-all-link{display:inline-flex;align-items:center;gap:6px;margin-top:1.5rem;font-size:11px;font-weight:700;color:var(--purple);letter-spacing:0.1em;text-transform:uppercase;text-decoration:underline;text-underline-offset:3px}
-
-/* FOOTER */
 footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid var(--border)}
 @media(max-width:700px){footer{padding:2rem 1.5rem}}
 .footer-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700}
@@ -182,7 +146,6 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   <a class="nav-cta" href="https://github.com/ak3036811-gif" target="_blank">GitHub ↗</a>
 </nav>
 
-<!-- ① WHO YOU ARE -->
 <section class="hero" id="about">
   <div>
     <div class="hero-kicker">AI Researcher · Educator · Builder</div>
@@ -190,6 +153,9 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
     <p class="hero-sub">
       I'm <strong>Ayush Kumar</strong>, a Grade 11 student from Ghaziabad, India. I design adaptive AI systems, founded <strong>AlgoBridge</strong> — a digital literacy initiative that has reached 100+ underserved students across 5 NGOs — and write research-backed essays on AI and education.
     </p>
+    <div class="hero-community">
+      For over <strong>11 years</strong>, I've been engaged in a community initiative centered on cultural education and dialogue, working with diverse groups to explore Indian traditions and perspectives. Through this, I've developed the ability to communicate complex ideas in simple, accessible ways — a skill that directly informs my work in teaching AI and algorithms to students from non-technical backgrounds.
+    </div>
     <div class="hero-actions">
       <a class="btn-fill" href="#algobridge">See My Impact Work</a>
       <a class="btn-outline" href="#projects">View Projects</a>
@@ -198,28 +164,25 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   <div class="hero-stats">
     <div class="hero-stat"><div class="hero-stat-val">100+</div><div class="hero-stat-label">Students reached through AlgoBridge</div></div>
     <div class="hero-stat"><div class="hero-stat-val">5</div><div class="hero-stat-label">NGOs partnered with</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">11+</div><div class="hero-stat-label">Years serving community — cultural education &amp; dialogue</div></div>
     <div class="hero-stat"><div class="hero-stat-val">7+</div><div class="hero-stat-label">Research blogs published</div></div>
     <div class="hero-stat"><div class="hero-stat-val">2nd</div><div class="hero-stat-label">Place — GSAP Global Pitching Finale</div></div>
   </div>
 </section>
 
-<!-- ② PHILOSOPHY -->
 <div class="philosophy">
   <p>"I believe AI literacy should be as fundamental as reading. <span>The divide in who understands algorithms is as profound as the divide in who can see — and just as fixable.</span>"</p>
 </div>
 
-<!-- ③ THE PROBLEM YOU CARE ABOUT → WHAT YOU BUILT → IMPACT -->
 <section class="section" id="algobridge">
   <div class="section-eyebrow">Community Impact</div>
   <div class="section-heading">AlgoBridge</div>
 
-  <!-- PROBLEM -->
   <div class="algo-problem">
     <div class="algo-problem-label">The Problem</div>
     <p>Millions of students graduate without ever encountering algorithms or AI — the engines powering the modern world. <strong>1 in 3 students lack basic digital literacy.</strong> In underserved schools, the number is far worse. Not because students lack ability — but because they lack access. No trained teachers. No infrastructure. No awareness of why it matters.</p>
   </div>
 
-  <!-- WHAT I BUILT -->
   <div class="algo-layout">
     <div>
       <div class="algo-name">Algo<em>Bridge</em></div>
@@ -235,7 +198,7 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
       </div>
     </div>
     <div class="impact-box">
-      <div class="impact-box-label">Scale & Reach</div>
+      <div class="impact-box-label">Scale &amp; Reach</div>
       <div class="impact-num"><div class="impact-num-val">100+</div><div class="impact-num-label">Students reached</div></div>
       <div class="impact-num"><div class="impact-num-val">5</div><div class="impact-num-label">NGOs partnered with</div></div>
       <div class="impact-num"><div class="impact-num-val">11–18</div><div class="impact-num-label">Age group taught</div></div>
@@ -244,7 +207,6 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
     </div>
   </div>
 
-  <!-- BEFORE / AFTER -->
   <div class="bafore-grid">
     <div class="ba-card ba-before">
       <div class="ba-label">Before AlgoBridge</div>
@@ -261,7 +223,6 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   </div>
   <div style="font-size:11px;color:var(--ink3);font-style:italic;margin-bottom:3rem">* Based on pre/post comprehension checks conducted at the start and end of each workshop session.</div>
 
-  <!-- PHOTOS -->
   <div class="photos-grid">
     <div class="photo-slot"><img src="photo1.jpeg" alt="AlgoBridge session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo1.jpeg</div>'"></div>
     <div class="photo-slot"><img src="photo2.jpeg" alt="AlgoBridge session" onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'>📸 photo2.jpeg</div>'"></div>
@@ -277,7 +238,6 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   </div>
 </section>
 
-<!-- ④ WHAT I'M BUILDING NEXT -->
 <section class="section" id="projects">
   <div class="section-eyebrow">Core Work</div>
   <div class="section-heading">AI + Education Projects</div>
@@ -290,7 +250,7 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
     </div>
     <div class="project-card">
       <div class="project-type">Research Blog · 7+ Articles</div>
-      <div class="project-name">AI & Education Writing</div>
+      <div class="project-name">AI &amp; Education Writing</div>
       <div class="project-desc">Research-backed essays on AI in learning — covering topics from student cognition to algorithmic bias. Written for a general audience, grounded in evidence.</div>
       <div class="project-footer"><span class="project-stack">Research · Writing · 7+ Published</span><a class="project-link" href="https://itsreadingtimee.blogspot.com" target="_blank">Read Blog →</a></div>
     </div>
@@ -307,16 +267,15 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
     </div>
     <div class="project-card">
       <div class="project-type">Game Development</div>
-      <div class="project-name">Nebula Dash & Word Game</div>
+      <div class="project-name">Nebula Dash &amp; Word Game</div>
       <div class="project-desc">Two games built from scratch — a fast-paced space game with adaptive level progression, and a vocabulary recognition game designed to make learning through play effective.</div>
       <div class="project-footer"><span class="project-stack">Python · Game Mechanics</span><a class="project-link" href="https://github.com/ak3036811-gif" target="_blank">View on GitHub →</a></div>
     </div>
   </div>
 </section>
 
-<!-- ⑤ WRITING -->
 <section class="section" id="writing">
-  <div class="section-eyebrow">Research & Essays</div>
+  <div class="section-eyebrow">Research &amp; Essays</div>
   <div class="section-heading">Writing</div>
   <a class="blog-item" href="https://itsreadingtimee.blogspot.com/2026/04/i-studied-with-and-without-ai-for-2.html" target="_blank">
     <div class="blog-date">Apr 2026</div>
@@ -356,11 +315,9 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   <a class="view-all-link" href="https://itsreadingtimee.blogspot.com" target="_blank">View all writing →</a>
 </section>
 
-<!-- ⑥ CREDENTIALS -->
 <section class="section" id="credentials">
   <div class="section-eyebrow">Education</div>
   <div class="section-heading">Credentials</div>
-
   <div class="g2" style="margin-bottom:1px">
     <div class="cert-card-big">
       <div class="cert-issuer-big">Harvard University · Cambridge, MA</div>
@@ -377,12 +334,12 @@ footer{padding:2.5rem 4rem;display:flex;justify-content:space-between;align-item
   </div>
   <div class="g2" style="margin-bottom:1px">
     <div class="cert-card-big">
-      <div class="cert-issuer-big">Stanford Engineering · Center for Global & Online Education</div>
-      <div class="cert-title-big">Generative AI: Technology, Business & Society</div>
+      <div class="cert-issuer-big">Stanford Engineering · Center for Global &amp; Online Education</div>
+      <div class="cert-title-big">Generative AI: Technology, Business &amp; Society</div>
       <div class="cert-meta-big">Nov–Dec 2025</div>
     </div>
     <div class="cert-card-big">
-      <div class="cert-issuer-big">Stanford Engineering · Center for Global & Online Education</div>
+      <div class="cert-issuer-big">Stanford Engineering · Center for Global &amp; Online Education</div>
       <div class="cert-title-big">Introduction to Internet of Things</div>
       <div class="cert-meta-big">Nov 2025–Jan 2026</div>
     </div>
